@@ -1,0 +1,10 @@
+<table class="table">
+	<tbody>
+		<% @outfits.each do |outfit| %>
+		<td>
+			<!-- 	<img src="http://cache.mrporter.com/images/products/378520/378520_mrp_ou_xl.jpg"/> -->
+			<a href="<%= outfit_path(outfit) %>"><img src="<%= outfit.image.url %>"/></a>
+		</td>
+		<% end %>
+	</tbody>
+</table>

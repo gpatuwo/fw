@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  min_temp: 1
+  max_temp: 1
+  url: MyText
+  image: MyText
+
+two:
+  description: MyText
+  min_temp: 1
+  max_temp: 1
+  url: MyText
+  image: MyText

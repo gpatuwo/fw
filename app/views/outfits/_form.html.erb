@@ -1,0 +1,31 @@
+<%= form_for @outfit do |f| %>
+	<div>
+		<%= f.label :description, "Items in Outfit" %><br>
+		<%= f.text_field :description %>
+	</div>
+	<div>
+		<%= f.label :gender, "Guy or Girl?" %><br>
+		<%= f.select(:gender, [['Guy', "Guy"], ['Girl', "Girl"]]) %>
+	</div>
+
+	<div>
+		<%= f.label :min_temp, "Minimum Tempterature" %><br>
+		<%= f.text_field :min_temp %>
+	</div>
+	<div>
+		<%= f.label :max_temp, "Maximum Tempterature" %><br>
+		<%= f.text_field :max_temp %>
+	</div>
+	<div>
+		<%= f.label :url, "Where can you buy this outfit?" %><br>
+		<%= f.text_field :url %>
+	</div>
+	<div>
+		<%= f.label :image, "Upload a picture" %><br>
+		<%= f.file_field :image %>
+	</div>
+
+	<br>
+	<%= f.submit "Submit a new outfit!" %>
+
+<% end %>
