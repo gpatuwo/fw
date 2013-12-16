@@ -4,5 +4,7 @@
 <br>
 <p>
 	<a href="<%= @outfit.url %>"><img src="<%= @outfit.image.url %>"/></a>
-	<br><%= @outfit.description %></br>
+	<br style="text-align: right"><%= @outfit.description %></br>
+	<%= button_to "Edit Outfit Details", edit_outfit_path(@outfit), :method => :edit %>
+	<%= button_to "Delete Outfit", outfit_path(@outfit), :method => :delete %>
 </p>

@@ -1,3 +1,11 @@
+<% if @outfit.errors.any? %>
+	<h3>You have errors **sadface** </h3>
+	<ul> <% @outfit.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<%end%>
+
 <%= form_for @outfit do |f| %>
 	<div>
 		<%= f.label :description, "Items in Outfit" %><br>
@@ -9,11 +17,11 @@
 	</div>
 
 	<div>
-		<%= f.label :min_temp, "Minimum Tempterature" %><br>
+		<%= f.label :min_temp, "Minimum Temperature" %><br>
 		<%= f.text_field :min_temp %>
 	</div>
 	<div>
-		<%= f.label :max_temp, "Maximum Tempterature" %><br>
+		<%= f.label :max_temp, "Maximum Temperature" %><br>
 		<%= f.text_field :max_temp %>
 	</div>
 	<div>
@@ -26,6 +34,6 @@
 	</div>
 
 	<br>
-	<%= f.submit "Submit a new outfit!" %>
+	<%= f.submit "Submit this outfit!" %>
 
 <% end %>

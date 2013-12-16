@@ -22,8 +22,24 @@ class OutfitsController < ApplicationController
 		@outfit = Outfit.find params[:id]
 	end
 
+	def edit
+		@outfit = Outfit.find(params[:id])
+	end
+
+	def update
+		@outfit = Outfit.find(params[:id])
+		@outfit.update(safe_outfit_params)
+		redirect_to movie_path(@outfit)
+	end
+
+	def destroy
+		@outfit = Outfit.find(params[:id])
+		@outfit.destroy
+		redirect_to root_path
+	end
+
 	private
-	def safe_movie_params
+	def safe_outfit_params
 		return params.require(:outfit).permit(:description, :min_temp, :max_temp, :gender, :url, :image)
 	end
 end
