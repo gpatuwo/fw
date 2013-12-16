@@ -1,6 +1,6 @@
 class OutfitsController < ApplicationController
 	def index
-		@outfits = Outfit.all
+		@outfits = Outfit.all.order("updated_at DESC")
 	end
 
 	def new
