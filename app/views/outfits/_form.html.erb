@@ -1,5 +1,5 @@
 <% if @outfit.errors.any? %>
-	<h3>You have errors **sadface** </h3>
+	<h3>Oh noes! Something is wrong :( </h3>
 	<ul> <% @outfit.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
