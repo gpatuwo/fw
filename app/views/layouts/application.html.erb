@@ -11,7 +11,12 @@
 <div class="container">
 	<div class="navbar">
 		<a class="brand" href="<%= root_path %>"><h1><u>FW</u></h1></a>
-		<a href="<%=new_outfit_path %>"><h5 style="text-align:right;">add a new outfit</h5></a>
+		<ul class"nav">
+			<li>Log In</li>
+			<li><a href="<%=new_outfit_path %>"><b>add a new outfit</b></a></li>
+		</ul>
+	</div>
+</div>
 <%= yield %>
 </div>
 
