@@ -2,10 +2,19 @@
 <br>
 <br>
 <br>
-<p>
-	<a href="<%= @outfit.url %>"><img src="<%= @outfit.image.url %>"/></a>
-	<br style="text-align: right"><%= @outfit.description %></br>
-	<br><a href="<%= edit_outfit_path(@outfit) %>">Edit Details</a></br>
-	<%= button_to "Delete Outfit", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete %>
-
-</p>
+<div class="container">
+	<div class="row">
+		<div class="span6">
+			<a href="<%= @outfit.url %>"><img src="<%= @outfit.image.url %>"/></a>
+		</div>
+		<div class="span3">
+			<b>Items in this outfit:</b>
+				<br><%= @outfit.description %></br>
+			<br>
+			This outfit is good for weather between <%= @outfit.min_temp %>F and <%= @outfit.max_temp %>F.
+			<br>
+			<br><a href="<%= edit_outfit_path(@outfit) %>">Edit Details</a></br>
+			<br><%= button_to "Delete Outfit", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete %></br>
+		</div>
+	</div>
+</div>
