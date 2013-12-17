@@ -11,13 +11,10 @@
 <% end %>
 
 <h4> weather mood board </h4>
-<div container>
-	<div display="inline-block">
-		<% @outfits.each do |outfit| %>
+<div class="imagebox">
+	<% @outfits.each do |outfit| %>
 		<div>
-			<!-- 	<img src="http://cache.mrporter.com/images/products/378520/378520_mrp_ou_xl.jpg"/> -->
 			<a href="<%= outfit_path(outfit) %>"><img src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/></a>
 		</div>
 		<% end %>
-	</div>
 </div>

@@ -1,5 +1,6 @@
 Fw::Application.routes.draw do
 
+  devise_for :users
   root 'outfits#index'
   resources :outfits
   # The priority is based upon order of creation: first created -> highest priority.

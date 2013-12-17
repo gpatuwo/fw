@@ -41,6 +41,8 @@ gem 'twitter-bootstrap-rails'
 gem 'carrierwave'
 gem 'fog'
 
+gem 'devise'
+
 gem 'rails_12factor', :group => :production
 gem 'pg', :group => :production
 
