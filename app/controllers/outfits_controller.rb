@@ -1,6 +1,10 @@
 class OutfitsController < ApplicationController
 	def index
-		@outfits = Outfit.all.order("updated_at DESC")
+		if params[:q].present?
+			@outfits = Outfit.search_for(params[:q])
+		else
+			@outfits = Outfit.all.order("updated_at DESC")
+		end
 	end
 
 	def new

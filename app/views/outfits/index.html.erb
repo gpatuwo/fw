@@ -2,6 +2,14 @@
 <br>
 <br>
 <br>
+
+<%= form_tag "/", :method => :get do %>
+	<b>Need some inspiration on what to wear?</b>
+	<br>Enter in today's weather condition:
+	<%= text_field_tag :q, params[:q] %> F
+	<%= submit_tag "Show me clothes!"%></br> 
+<% end %>
+
 <h4> weather mood board </h4>
 <table class="table">
 	<tbody>
