@@ -27,9 +27,13 @@ class OutfitsController < ApplicationController
 	end
 
 	def update
-		@outfit = Outfit.find(params[:id])
-		@outfit.update(safe_outfit_params)
-		redirect_to movie_path(@outfit)
+		if 
+			@outfit = Outfit.find(params[:id])
+			@outfit.update(safe_outfit_params)
+			redirect_to @outfit
+		else
+			render :edit
+		end
 	end
 
 	def destroy
