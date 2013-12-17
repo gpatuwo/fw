@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<div class="container">
 <html>
 <head>
   <title>FW</title>
@@ -8,17 +9,17 @@
 </head>
 <body>
 
-<div class="container">
-	<div class="navbar">
-		<a class="brand" href="<%= root_path %>"><h1><u>FW</u></h1></a>
-		<ul class"nav">
+	<div class="navbar navbar-inverse" role="navigation">
+		<ul class="nav nav-tabs">
+			<li><a class="brand" href="<%= root_path %>"><h1><u>FW</u></h1></a></li>
 			<li>Log In</li>
 			<li><a href="<%=new_outfit_path %>"><b>add a new outfit</b></a></li>
 		</ul>
 	</div>
-</div>
+
 <%= yield %>
-</div>
 
 </body>
 </html>
+
+</div>
