@@ -12,15 +12,24 @@
 			<li>
 				<a class="brand" href="<%= root_path %>">FW</a>
 			</li>
-			<li>
-				<a href="<%= new_user_session_path %>">log in</a>
-			</li>
-			<li>
-				<a href="<%= new_user_registration_path %>">sign up</a>
-			</li>
-			<li>
-				<a href="<%=new_outfit_path %>">add a new outfit</a>
-			</li>
+			<ul class="nav nav-tabs pull-right">
+				<% if user_signed_in? %>
+					<li> Hi, <%= current_user.email %> </li>
+					<li>
+						<%= link_to "sign out", destroy_user_session_path, method: :delete %>
+					</li>
+				<% else %>
+					<li>
+						<a href="<%= new_user_session_path %>">log in</a>
+					</li>
+					<li>
+						<a href="<%= new_user_registration_path %>">sign up</a>
+					</li>
+				<% end%>
+				<li>
+					<a href="<%=new_outfit_path %>">add a new outfit</a>
+				</li>
+			</ul>
 		</ul>
 	</div>
 </head>

@@ -11,7 +11,7 @@
 		<div class="col-xs-6 col-md-3">
 			<% @outfits.each do |outfit| %>
 			<a href="<%= outfit_path(outfit) %>" class="thumbnail">
-				<img data-src="holder.js/180x100%" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
+				<img data-src="holder.js/180" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
 			</a>
 			<% end %>
 		</div>
