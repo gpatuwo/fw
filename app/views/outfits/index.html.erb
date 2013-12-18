@@ -7,14 +7,13 @@
 
 <h4> weather mood board </h4>
 <div class="container">
-	<% @outfits.each do |outfit| %>
-		<div class="row">
-			:before
-			<div class="col-xs-6 col-md-3">
-				<a href="<%= outfit_path(outfit) %>" class="thumbnail">
-					<img data-src="holder.js/180x100%" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
-				</a>
-			</div>
+	<div class="row">
+		<div class="col-xs-6 col-md-3">
+			<% @outfits.each do |outfit| %>
+			<a href="<%= outfit_path(outfit) %>" class="thumbnail">
+				<img data-src="holder.js/180x100%" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
+			</a>
+			<% end %>
 		</div>
-	<% end %>
+	</div>
 </div>
