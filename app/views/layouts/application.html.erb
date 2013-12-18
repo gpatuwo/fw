@@ -6,29 +6,27 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <style>
-  .imagebox
- 	 {
-  		display:inline-block;
-  		width:300px;
-  	}
-  	.imagebox img
-  	{
-  		max-width:300px;
-  	}
-  </style>
-</head>
-<body>
 
-	<div class="navbar" role="navigation">
+  	<div class="navbar" role="navigation">
 		<ul class="nav nav-tabs">
-			<li><h1><a class="brand" href="<%= root_path %>">FW</a></li>
-			<li><a href="<%= new_user_session_path %>">log in</a></li>
-			<li><a href="<%= new_user_registration_path %>">sign up</a></li>
-			<li><a href="<%=new_outfit_path %>"><b>add a new outfit</b></a></li>
+			<li>
+				<a class="brand" href="<%= root_path %>">FW</a>
+			</li>
+			<li>
+				<a href="<%= new_user_session_path %>">log in</a>
+			</li>
+			<li>
+				<a href="<%= new_user_registration_path %>">sign up</a>
+			</li>
+			<li>
+				<a href="<%=new_outfit_path %>">add a new outfit</a>
+			</li>
 		</ul>
 	</div>
-
+</head>
+<body>
+<br>
+<br>
 <%= yield %>
 
 </body>

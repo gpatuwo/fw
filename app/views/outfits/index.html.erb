@@ -1,8 +1,3 @@
-<br>
-<br>
-<br>
-<br>
-
 <%= form_tag "/", :method => :get do %>
 	<b>Need some inspiration on what to wear?</b>
 	<br>Enter in today's weather condition:
@@ -11,10 +6,15 @@
 <% end %>
 
 <h4> weather mood board </h4>
-<div>
+<div class="container">
 	<% @outfits.each do |outfit| %>
-		<div class="imagebox">
-			<a href="<%= outfit_path(outfit) %>"><img src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/></a>
+		<div class="row">
+			:before
+			<div class="col-xs-6 col-md-3">
+				<a href="<%= outfit_path(outfit) %>" class="thumbnail">
+					<img data-src="holder.js/180x100%" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
+				</a>
+			</div>
 		</div>
-		<% end %>
+	<% end %>
 </div>
