@@ -1,10 +1,16 @@
 class OutfitsController < ApplicationController
+	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+
 	def index
 		if params[:q].present?
 			@outfits = Outfit.search_for(params[:q])
 		else
 			@outfits = Outfit.all.order("updated_at DESC")
 		end
+	end
+
+	def show
+		@outfit = Outfit.find params[:id]
 	end
 
 	def new
@@ -15,15 +21,14 @@ class OutfitsController < ApplicationController
 		@outfit = Outfit.new(params.require(:outfit).permit(:description, :min_temp, :max_temp, :gender, :url, :image))
 		# @outfit.description = params[:outfit][:description]
 		# @outfit.description = params[:outfit][:]
+
+		@outfit.user = current_user
+		
 		if @outfit.save
 			redirect_to root_path
 		else
 			render :new
 		end
-	end
-
-	def show
-		@outfit = Outfit.find params[:id]
 	end
 
 	def edit

@@ -1,7 +1,5 @@
 <br>
 <br>
-<br>
-<br>
 <div class="container">
 	<div class="row">
 		<div class="span6">
@@ -11,8 +9,8 @@
 			<b>Items in this outfit:</b>
 				<br><%= @outfit.description %></br>
 			<br>
-			This outfit is good for weather between <%= @outfit.min_temp %>F and <%= @outfit.max_temp %>F.
-			<br>
+			This outfit is good for weather between <%= @outfit.min_temp %>F and <%= @outfit.max_temp %>F.</br>
+			<br> Uploaded by <%= @outfit.user.email %></br>
 			<br><a href="<%= edit_outfit_path(@outfit) %>">Edit Details</a></br>
 			<br><%= button_to "Delete Outfit", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete %></br>
 		</div>
