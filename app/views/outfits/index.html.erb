@@ -5,15 +5,17 @@
 	<%= submit_tag "Show me clothes!"%> 
 <% end %>
 
-<h4> \/\/\/\ weather mood board /\/\/\/</h4>
-<div class="container">
-	<ul class="thumbnails">
-			<% @outfits.each do |outfit| %>
-			<li class="span3">
-				<a href="<%= outfit_path(outfit) %>" class="thumbnail">
-					<img data-src="holder.js/180" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
-				</a>
-			</li>
-			<% end %>
-	</ul>
-</div>
+<h4>weather mood board</h4>
+	<% if @outfits.empty? %>
+		<div class="alert alert-info">Sorry, no outfits were found.  Want to <%= link_to "Upload", new_outfit_path %> one?</div>
+	<% else %>
+		<ul class="thumbnails">
+				<% @outfits.each do |outfit| %>
+				<li class="span3">
+					<a href="<%= outfit_path(outfit) %>" class="thumbnail">
+						<img data-src="holder.js/180" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
+					</a>
+				</li>
+				<% end %>
+		</ul>
+	<% end %>

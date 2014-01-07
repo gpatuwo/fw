@@ -6,6 +6,6 @@ class Outfit < ActiveRecord::Base
 	belongs_to :user
 	
 	def self.search_for (query)
-		Outfit.where(":query BETWEEN min_temp AND max_temp", :query =>"%#{query}%")
+    Outfit.where("min_temp >= :query AND max_temp <= :query", :query =>"#{query}")
 	end  
 end
