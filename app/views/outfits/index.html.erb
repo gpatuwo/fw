@@ -1,11 +1,13 @@
-<%= form_tag "/", :method => :get do %>
+<%= form_tag "/", :method => :get, :class => 'form-inline' do %>
 	<h3>Need some inspiration on what to wear?</h3>
-	<br>Enter in today's weather condition:</br>
-	<%= text_field_tag :q, params[:q] %> F
-	<%= submit_tag "Show me clothes!"%> 
+	<%= label_tag :q, 'Today''s temperature:' %>
+	<%= text_field_tag :q, params[:q], :class => 'input-small' %>
+	<span>&deg;F</span>
+	<%= submit_tag "Show me clothes!", :class => 'btn' %> 
 <% end %>
 
 <h4>weather mood board</h4>
+<hr />
 	<% if @outfits.empty? %>
 		<div class="alert alert-info">Sorry, no outfits were found.  Want to <%= link_to "Upload", new_outfit_path %> one?</div>
 	<% else %>
