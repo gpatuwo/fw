@@ -1,19 +1,19 @@
 <%= form_tag "/", :method => :get do %>
 	<h3>Need some inspiration on what to wear?</h3>
-	<br>Enter in today's weather condition:
+	<br>Enter in today's weather condition:</br>
 	<%= text_field_tag :q, params[:q] %> F
 	<%= submit_tag "Show me clothes!"%> 
 <% end %>
 
 <h4> \/\/\/\ weather mood board /\/\/\/</h4>
 <div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-md-3">
+	<ul class="thumbnails">
 			<% @outfits.each do |outfit| %>
-			<a href="<%= outfit_path(outfit) %>" class="thumbnail">
-				<img data-src="holder.js/180" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
-			</a>
+			<li class="span3">
+				<a href="<%= outfit_path(outfit) %>" class="thumbnail">
+					<img data-src="holder.js/180" style="height: 100%; width: 180px; display: block;" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
+				</a>
+			</li>
 			<% end %>
-		</div>
-	</div>
+	</ul>
 </div>

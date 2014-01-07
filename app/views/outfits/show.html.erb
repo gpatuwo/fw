@@ -1,16 +1,21 @@
 <br>
 <br>
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<div class="span6">
+		<div class="span4">
 			<a href="<%= @outfit.url %>"><img src="<%= @outfit.image.url %>"/></a>
 		</div>
+
 		<div class="span3">
 			<b>Items in this outfit:</b>
 				<br><%= @outfit.description %></br>
 			<br>
 			This outfit is good for weather between <%= @outfit.min_temp %>F and <%= @outfit.max_temp %>F.</br>
-			<br> Uploaded by <%= @outfit.user.email %></br>
+			<% if @user.present? %>
+				<br> Uploaded by <%= @outfit.user.email %></br>
+				<% else %>
+					<br> Uploaded by Yours Truly</br>
+			<%end%>
 			<br><a href="<%= edit_outfit_path(@outfit) %>">Edit Details</a></br>
 			<br><%= button_to "Delete Outfit", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete %></br>
 		</div>
