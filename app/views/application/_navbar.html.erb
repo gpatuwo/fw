@@ -3,30 +3,30 @@
     <a class="brand" href="<%= root_path %>">FW</a>
     <ul class="nav pull-left">
     </ul>
-    <% if user_signed_in? %>
-      <ul class="nav pull-right">
-        <li>
-          <a href="<%=new_outfit_path %>">add a new outfit</a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Hi, <%= current_user.email %>
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <%= link_to "sign out", destroy_user_session_path, method: :delete %>
-            </li>
-          </ul>
-        </li>
-    <% else %>
-        <li>
-          <a href="<%= new_user_session_path %>">log in</a>
-        </li>
-        <li>
-          <a href="<%= new_user_registration_path %>">sign up</a>
-        </li>
-      </ul>
-    <% end%>
+    <ul class="nav pull-right">
+      <% if user_signed_in? %>
+          <li>
+            <a href="<%=new_outfit_path %>">add a new outfit</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Hi, <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+      <% else %>
+          <li>
+            <a href="<%= new_user_session_path %>">log in</a>
+          </li>
+          <li>
+            <a href="<%= new_user_registration_path %>">sign up</a>
+          </li>
+      <% end%>
+    </ul>
   </div>
 </div>
