@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
     # :region => 'us-west-1' -- only if you're not in US Standard
   }       
   if Rails.env.development?
-    config.fog_directory = 'fw_app-dev'
+    config.fog_directory = 'fw_app_dev'
   else
     config.fog_directory = 'fw_app'
   end

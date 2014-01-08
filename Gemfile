@@ -40,6 +40,7 @@ gem 'twitter-bootstrap-rails'
 
 gem 'carrierwave'
 gem 'fog'
+gem 'unf' 
 
 gem 'devise'
 
