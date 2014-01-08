@@ -9,7 +9,7 @@
 		<h4>Temperature</h4>
 		<p>This outfit is good for weather between <%= @outfit.min_temp %> &deg;F and <%= @outfit.max_temp %> &deg;F.</p>
 		<h4>Uploaded by <%= @outfit.user.email %></h4>
-		<%= link_to "Edit Outfit", edit_outfit_path(@outfit), :class => 'btn btn-small' %>
-		<%= link_to "Delete Outfit", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete, :class=> 'btn btn-small btn-danger' %>
+		<%= link_to "Edit This Outfit", edit_outfit_path(@outfit), :class => 'btn btn-small btn-warning' %>
+		<%= link_to "Delete", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete, :class=> 'btn btn-mini' %>
 	</div>
 </div>
