@@ -17,7 +17,7 @@
 				<% @outfits.each do |outfit| %>
 				<li class="span3">
 					<a href="<%= outfit_path(outfit) %>" class="thumbnail">
-						<img data-src="holder.js/180" src="<%= outfit.image.url %>" alt="<%= outfit.description%>"/>
+						<img data-src="holder.js/180" src="<%= outfit.image.url %>" alt="<%= outfit.description%>" title="<%= outfit.description%>"/>
 					</a>
 				</li>
 				<% end %>
