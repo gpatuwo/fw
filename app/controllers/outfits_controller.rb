@@ -2,8 +2,10 @@ class OutfitsController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
 	def index
-		if params[:q].present?
-			@outfits = Outfit.search_for(params[:q])
+		@selected_gender = params[:gender]
+		
+		if params[:q].present? && params[:gender].present?
+			@outfits = Outfit.search_for(params[:q], params[:gender])
 		else
 			@outfits = Outfit.all.order("updated_at DESC")
 		end

@@ -3,6 +3,8 @@
 	<%= label_tag :q, 'Today''s temperature:' %>
 	<%= text_field_tag :q, params[:q], :class => 'input-small' %>
 	<span>&deg;F</span>
+	<%= label_tag :gender, "Guy or Girl?" %>
+	<%= select_tag :gender, options_for_select(['Guy', "Girl"], @selected_gender) %>
 	<%= submit_tag "Show me clothes!", :class => 'btn' %> 
 <% end %>
 
