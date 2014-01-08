@@ -4,11 +4,13 @@
 	</div>
 	<div class="span4 offset1">
 		<h3>Items in this outfit:</h3>
-		<h4>Description</h4>
-		<p><%= @outfit.description %></p>
-		<h4>Temperature</h4>
-		<p>This outfit is good for weather between <%= @outfit.min_temp %> &deg;F and <%= @outfit.max_temp %> &deg;F.</p>
-		<h4>Uploaded by <%= @outfit.user.email %></h4>
+			<h4>Description</h4>
+				<p><%= @outfit.description %></p>
+			<h4>Temperature</h4>
+				<p>This outfit is good for weather between <%= @outfit.min_temp %>&deg;F and <%= @outfit.max_temp %>&deg;F.</p>
+			<br>
+			<h5>Uploaded by <%= @outfit.user.email %></h5>
+		<br>
 		<%= link_to "Edit This Outfit", edit_outfit_path(@outfit), :class => 'btn btn-small btn-warning' %>
 		<%= link_to "Delete", outfit_path(@outfit), :confirm => "Are you sure?", :method => :delete, :class=> 'btn btn-mini' %>
 	</div>
