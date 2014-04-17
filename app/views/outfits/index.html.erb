@@ -1,7 +1,7 @@
 <%= form_tag "/", :method => :get, :class => 'form-inline' do %>
 	<h4>Need some inspiration on what to wear?</h4>
-	<%= label_tag :temperature, "Today's Average Temperature in SF:" %>
-	<%= text_field_tag :temperature, @temperature.round(1), :class => 'input-small' %>
+	<%= label_tag :temperature, "Temperature in SF right now:" %>
+	<%= text_field_tag :temperature, @temperature.round(0), :class => 'input-small' %>
 	<span>&deg;F</span>
 	<p><%= label_tag :gender, "Guy or Girl?" %>
 	<%= select_tag :gender, options_for_select(['Guy', "Girl"], @selected_gender) %>
