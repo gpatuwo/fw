@@ -3,9 +3,16 @@ class OutfitsController < ApplicationController
 
 	def index
 		@selected_gender = params[:gender]
-		
-		if params[:q].present? && params[:gender].present?
-			@outfits = Outfit.search_for(params[:q], params[:gender])
+		@temperature = 555
+
+		response = Net::HTTP.get_response("api.openweathermap.org","/data/2.5/weather?q=san%20francisco")
+
+		response = JSON.parse(response.body)
+		temperature_kelvin = response["main"]["temp"] 
+		@temperature = (9/5) * ( temperature_kelvin - 273) + 32
+
+		if params[:temperature].present? && params[:gender].present?
+			@outfits = Outfit.search_for(params[:temperature], params[:gender])
 		else
 			@outfits = Outfit.all.order("updated_at DESC")
 		end
